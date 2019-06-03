@@ -1,6 +1,6 @@
 <template>
   <section class="container md:max-w-4xl">
-    <template v-for="(x, i) in entries">
+    <template v-for="(x, i) in gAllSites">
       <div
         :key="i"
         class="w-full bg-white rounded-lg shadow-lg p-6 m-2 md:flex"
@@ -33,13 +33,19 @@
         </div>
       </div>
     </template>
+    <button @click="addSite">addSite</button>
   </section>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   components: {},
   computed: {
+    ...mapGetters({
+      gAllSites: 'sites/gAllSites'
+    }),
     entries() {
       return [
         {
@@ -63,6 +69,20 @@ export default {
             'Visualize your AWS environment as isometric architecture diagrams. Snap together blocks for EC2s, ELBs, RDS and more. Connect your live AWS environment.'
         }
       ]
+    }
+  },
+
+  async asyncData({ params, store }) {
+    await store.dispatch('sites/loadSites')
+    return {}
+  },
+
+  methods: {
+    async addSite() {
+      for (const e of this.entries) {
+        const form = e
+        await this.$store.dispatch('sites/addSite', { form })
+      }
     }
   }
 }
