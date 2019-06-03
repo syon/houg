@@ -1,34 +1,69 @@
 <template>
-  <section class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        houg
-      </h1>
-      <h2 class="subtitle">
-        My dandy Nuxt.js project
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green"
-          >Documentation</a
-        >
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-          >GitHub</a
-        >
+  <section class="container md:max-w-4xl">
+    <template v-for="(x, i) in entries">
+      <div
+        :key="i"
+        class="w-full bg-white rounded-lg shadow-lg p-6 m-2 md:flex"
+      >
+        <div class="md:flex-shrink-0">
+          <img
+            class="rounded-lg md:w-40"
+            src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=448&q=80"
+            alt="Woman paying for a purchase"
+          />
+        </div>
+        <div class="mt-4 md:mt-0 md:ml-6">
+          <a
+            :href="x.url"
+            class="block mt-1 text-lg leading-tight font-semibold text-gray-900 hover:underline"
+            target="_blank"
+            >{{ x.title }}</a
+          >
+          <div class="text-teal-500 text-sm">{{ x.taxo }}</div>
+          <a
+            :href="x.url"
+            class="text-gray-600 hover:underline text-sm"
+            target="_blank"
+            >{{ x.url }}</a
+          >
+          <p class="mt-2 text-gray-600">
+            {{ x.desc }}
+          </p>
+          <div class="text-gray-600">#Photo</div>
+        </div>
       </div>
-    </div>
+    </template>
   </section>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-
 export default {
-  components: {
-    Logo
+  components: {},
+  computed: {
+    entries() {
+      return [
+        {
+          title: 'Pixlr.com',
+          taxo: 'Photo editor online',
+          url: 'https://pixlr.com/',
+          desc:
+            "Discover free and premium online photo editor! Effects, filters, overlays, simple to expert tools. You'll find a Pixlr image editor just for you!"
+        },
+        {
+          title: 'Photopea',
+          taxo: 'Online Image Editor',
+          url: 'https://www.photopea.com/',
+          desc: 'Getting a new business off the ground is a lot of hard work.'
+        },
+        {
+          title: 'Cloudcraft',
+          taxo: 'Draw AWS diagrams',
+          url: 'https://cloudcraft.co/',
+          desc:
+            'Visualize your AWS environment as isometric architecture diagrams. Snap together blocks for EC2s, ELBs, RDS and more. Connect your live AWS environment.'
+        }
+      ]
+    }
   }
 }
 </script>
@@ -39,34 +74,10 @@ export default {
   @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
+body {
+  background-color: #f6fafc;
+}
 .container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+  @apply min-h-screen flex flex-col justify-center items-center mx-auto;
 }
 </style>
