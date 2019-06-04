@@ -5,6 +5,14 @@
     <div class="w-full bg-white rounded-lg shadow-lg p-6 m-2">
       <h1 class="text-3xl">New site</h1>
       <div>
+        <span>url</span>
+        <input
+          v-model="form.url"
+          type="text"
+          class="w-full p-1 border border-gray-300"
+        />
+      </div>
+      <div>
         <span>name</span>
         <input
           v-model="form.name"
@@ -16,14 +24,6 @@
         <span>taxo</span>
         <input
           v-model="form.taxo"
-          type="text"
-          class="w-full p-1 border border-gray-300"
-        />
-      </div>
-      <div>
-        <span>url</span>
-        <input
-          v-model="form.url"
           type="text"
           class="w-full p-1 border border-gray-300"
         />

@@ -26,9 +26,6 @@
             target="_blank"
             >{{ x.url }}</a
           >
-          <p class="mt-2 text-gray-600">
-            {{ x.desc }}
-          </p>
           <div class="text-gray-600">#Photo</div>
         </div>
       </div>
