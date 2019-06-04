@@ -15,9 +15,9 @@
         <div class="mt-4 md:mt-0 md:ml-6">
           <a
             :href="x.url"
-            class="block mt-1 text-lg leading-tight font-semibold text-gray-900 hover:underline"
+            class="mt-1 text-lg leading-tight font-semibold text-gray-900 hover:underline"
             target="_blank"
-            >{{ x.title }}</a
+            >{{ x.name }}</a
           >
           <div class="text-teal-500 text-sm">{{ x.taxo }}</div>
           <a
@@ -49,20 +49,20 @@ export default {
     entries() {
       return [
         {
-          title: 'Pixlr.com',
+          name: 'Pixlr.com',
           taxo: 'Photo editor online',
           url: 'https://pixlr.com/',
           desc:
             "Discover free and premium online photo editor! Effects, filters, overlays, simple to expert tools. You'll find a Pixlr image editor just for you!"
         },
         {
-          title: 'Photopea',
+          name: 'Photopea',
           taxo: 'Online Image Editor',
           url: 'https://www.photopea.com/',
           desc: 'Getting a new business off the ground is a lot of hard work.'
         },
         {
-          title: 'Cloudcraft',
+          name: 'Cloudcraft',
           taxo: 'Draw AWS diagrams',
           url: 'https://cloudcraft.co/',
           desc:
