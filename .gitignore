@@ -85,3 +85,4 @@ sw.*
 
 # Firebase
 .firebase
+.secret

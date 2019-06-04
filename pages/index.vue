@@ -47,28 +47,7 @@ export default {
       gAllSites: 'sites/gAllSites'
     }),
     entries() {
-      return [
-        {
-          name: 'Pixlr.com',
-          taxo: 'Photo editor online',
-          url: 'https://pixlr.com/',
-          desc:
-            "Discover free and premium online photo editor! Effects, filters, overlays, simple to expert tools. You'll find a Pixlr image editor just for you!"
-        },
-        {
-          name: 'Photopea',
-          taxo: 'Online Image Editor',
-          url: 'https://www.photopea.com/',
-          desc: 'Getting a new business off the ground is a lot of hard work.'
-        },
-        {
-          name: 'Cloudcraft',
-          taxo: 'Draw AWS diagrams',
-          url: 'https://cloudcraft.co/',
-          desc:
-            'Visualize your AWS environment as isometric architecture diagrams. Snap together blocks for EC2s, ELBs, RDS and more. Connect your live AWS environment.'
-        }
-      ]
+      return []
     }
   },
 
