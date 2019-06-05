@@ -86,3 +86,6 @@ sw.*
 # Firebase
 .firebase
 .secret
+
+batch/import.tsv
+batch/export.tsv
