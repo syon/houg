@@ -8,8 +8,8 @@
     "dev": "nuxt",
     "deploy": "nuxt build && firebase deploy",
     "batch:import": "node batch/import.js",
-    "batch:export": "node batch/import.js",
-    "batch:merge": "node batch/import.js"
+    "batch:export": "node batch/export.js",
+    "batch:merge": "node batch/merge.js"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.5.3",

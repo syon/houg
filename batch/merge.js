@@ -9,7 +9,7 @@ function readCsvSync(filename, options) {
 
 async function main() {
   const options = { columns: true, delimiter: '\t' }
-  const recordsA = readCsvSync('./batch/import.tsv', options)
+  const recordsA = readCsvSync('./batch/dataset.tsv', options)
   const recordsB = readCsvSync('./batch/export.tsv', options)
   await 0
   const merged = recordsA.concat(recordsB)
