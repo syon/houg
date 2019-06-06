@@ -10,6 +10,7 @@
           v-model="form.url"
           type="text"
           class="w-full p-1 border border-gray-300"
+          :disabled="busy"
         />
       </div>
       <div>
@@ -18,6 +19,7 @@
           v-model="form.name"
           type="text"
           class="w-full p-1 border border-gray-300"
+          :disabled="busy"
         />
       </div>
       <div>
@@ -26,6 +28,7 @@
           v-model="form.taxo"
           type="text"
           class="w-full p-1 border border-gray-300"
+          :disabled="busy"
         />
       </div>
       <div>
@@ -33,10 +36,15 @@
         <textarea
           v-model="form.desc"
           class="w-full p-1 border border-gray-300"
+          :disabled="busy"
         />
       </div>
       <div>
-        <button class="bg-teal-500 rounded-full py-2 px-4" @click="send">
+        <button
+          class="bg-teal-500 rounded-full py-2 px-4"
+          :disabled="busy"
+          @click="send"
+        >
           send
         </button>
       </div>
@@ -47,15 +55,22 @@
 <script>
 export default {
   components: {},
+
   data() {
-    return { form: {} }
+    return {
+      form: {},
+      busy: false
+    }
   },
+
   computed: {},
 
   methods: {
     async send() {
+      this.busy = true
       const form = this.form
       await this.$store.dispatch('sites/addSite', { form })
+      window.location.href = '/'
     }
   }
 }
