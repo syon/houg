@@ -1,5 +1,28 @@
 <template>
   <section class="container md:max-w-4xl">
+    <button
+      class="fixed bottom-0 right-0 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
+      @click="transAdd"
+    >
+      <svg
+        class="fill-current w-4 h-4 mr-2 feather feather-plus sc-dnqmqq jxshSx"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+        data-reactid="981"
+      >
+        <line x1="12" y1="5" x2="12" y2="19"></line>
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+      </svg>
+      <span>add</span>
+    </button>
     <div class="w-full m-8 mt-24">
       <input
         v-model="query"
@@ -68,7 +91,11 @@ export default {
     return {}
   },
 
-  methods: {}
+  methods: {
+    transAdd() {
+      this.$router.push('/new')
+    }
+  }
 }
 </script>
 
