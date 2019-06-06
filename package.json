@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
+    "build": "nuxt build",
     "deploy": "nuxt build && firebase deploy",
     "batch:import": "node batch/import.js",
     "batch:export": "node batch/export.js",
