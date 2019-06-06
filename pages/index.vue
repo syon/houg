@@ -50,7 +50,7 @@
             target="_blank"
             >{{ x.name }}</a
           >
-          <div class="text-teal-500 text-sm">{{ x.taxo }}</div>
+          <div class="text-teal-500 text-sm">{{ x.caption }}</div>
           <div class="text-gray-600">#Photo</div>
         </div>
       </div>
@@ -79,7 +79,7 @@ export default {
       return this.gAllSites.filter(x => {
         if (re.test(x.url)) return true
         if (re.test(x.name)) return true
-        if (re.test(x.taxo)) return true
+        if (re.test(x.caption)) return true
         if (re.test(x.desc)) return true
         return false
       })

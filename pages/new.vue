@@ -23,9 +23,9 @@
         />
       </div>
       <div>
-        <span>taxo</span>
+        <span>caption</span>
         <input
-          v-model="form.taxo"
+          v-model="form.caption"
           type="text"
           class="w-full p-1 border border-gray-300"
           :disabled="busy"

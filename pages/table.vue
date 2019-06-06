@@ -19,7 +19,7 @@
               >{{ x.name }}</a
             >
           </td>
-          <td class="text-teal-500 text-sm">{{ x.taxo }}</td>
+          <td class="text-teal-500 text-sm">{{ x.caption }}</td>
           <td class="text-gray-600">#Photo</td>
         </tr>
       </tbody>

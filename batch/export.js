@@ -9,7 +9,7 @@ async function main() {
     columns: {
       url: 'url',
       name: 'name',
-      taxo: 'taxo',
+      caption: 'caption',
       desc: 'desc'
     },
     delimiter: '\t',
