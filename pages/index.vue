@@ -27,7 +27,7 @@
       <input
         v-model="query"
         type="text"
-        class="w-full p-2 shadow-inner"
+        class="w-full px-8 py-4 shadow-inner rounded"
         placeholder="検索キーワードを入力"
       />
     </div>
