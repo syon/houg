@@ -24,7 +24,6 @@
         </div>
       </div>
     </template>
-    <button @click="addSite">addSite</button>
   </section>
 </template>
 
@@ -36,10 +35,7 @@ export default {
   computed: {
     ...mapGetters({
       gAllSites: 'sites/gAllSites'
-    }),
-    entries() {
-      return []
-    }
+    })
   },
 
   async asyncData({ params, store }) {
@@ -47,14 +43,7 @@ export default {
     return {}
   },
 
-  methods: {
-    async addSite() {
-      for (const e of this.entries) {
-        const form = e
-        await this.$store.dispatch('sites/addSite', { form })
-      }
-    }
-  }
+  methods: {}
 }
 </script>
 
