@@ -1,6 +1,14 @@
 <template>
   <section class="container md:max-w-4xl">
-    <template v-for="(x, i) in gAllSites">
+    <div class="w-full m-8 mt-24">
+      <input
+        v-model="query"
+        type="text"
+        class="w-full p-2 shadow-inner"
+        placeholder="検索キーワードを入力"
+      />
+    </div>
+    <template v-for="(x, i) in filteredList">
       <div
         :key="i"
         class="w-full bg-white rounded-lg shadow-lg p-6 m-2 md:flex"
@@ -32,10 +40,27 @@ import { mapGetters } from 'vuex'
 
 export default {
   components: {},
+
+  data() {
+    return {
+      query: ''
+    }
+  },
+
   computed: {
     ...mapGetters({
       gAllSites: 'sites/gAllSites'
-    })
+    }),
+    filteredList() {
+      const re = new RegExp(this.query, 'gi')
+      return this.gAllSites.filter(x => {
+        if (re.test(x.url)) return true
+        if (re.test(x.name)) return true
+        if (re.test(x.taxo)) return true
+        if (re.test(x.desc)) return true
+        return false
+      })
+    }
   },
 
   async asyncData({ params, store }) {
@@ -57,6 +82,6 @@ body {
   background-color: #f6fafc;
 }
 .container {
-  @apply min-h-screen flex flex-col justify-center items-center mx-auto;
+  @apply min-h-screen flex flex-col items-center mx-auto;
 }
 </style>
